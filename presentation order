@@ -1,0 +1,8 @@
+import random
+
+students = ["Alice", "Roni", "Marc", "Mar","Lina", "Diana"]
+random.shuffle(students)
+
+print("presentation order: ")
+for s in students:
+    print(s)
