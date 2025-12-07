@@ -1,0 +1,45 @@
+import random
+
+words=["france","paris","effeltower"]
+unknown_words= random.choice(words)
+
+guessed_correctly= []
+guessed_incorrectly= []
+trial = 3
+hangman_count = -1
+
+while trial > 0:
+    answer = ''
+    for letter in unknown_words:
+        if letter in guessed_correctly or letter == " ":
+            answer += letter
+        else:
+            answer += "_ "
+    if answer == unknown_words:
+        break
+   
+    print("Guess the word: ", answer)
+    print(trial, " chances left")
+    guess = input("Enter a letter: ")
+    
+    if guess in unknown_words :
+        print("Good job you guessed the correct letter!",)
+        guessed_correctly.append(guess)
+    else:
+        print ("You have guessed the wrong letter!")
+        hangman_count += 1
+        trial -= 1
+        guessed_incorrectly.append(guess)
+    
+if trial > 0 :
+    print("You guessed the word and you win!!")
+else: 
+    print("Sorry you guessed the wrong letter. Try again ")
+    
+    
+   
+    
+
+
+
+
